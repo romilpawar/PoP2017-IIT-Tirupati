@@ -1,0 +1,9 @@
+-module().
+-export([print/1,ch/2,input/0]).
+input() -> [].
+ch([],0)->true;
+ch([],N) when N > 0 -> false;
+ch([$(| T],N)->ch(T,N+1);
+ch([$)| T],N)->ch(T,N-1).
+print(L)->
+	ch(L,0)
